@@ -3,7 +3,7 @@ import { IExperience } from "../interfaces/experience";
 
 
 const ExperienceSchema = new Schema<IExperience>({
-    user_id: { type: String, },
+  user_id: [{ type: Schema.Types.ObjectId, ref:'User' }],
     employer: { type: String, required: true },
     title: { type: String, required: true },
   });

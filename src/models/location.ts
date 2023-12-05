@@ -3,7 +3,7 @@ import { ILocation } from '../interfaces/location';
 
 
 const LocationSchema = new Schema<ILocation>({
-    user_id: { type: String,  },
+  user_id: [{ type: Schema.Types.ObjectId, ref:'User' }],
     parent_id: { type: String, required: true },
     city: { type: String, required: true },
     country: { type: String, required: true },
@@ -14,6 +14,6 @@ const LocationSchema = new Schema<ILocation>({
   });
   
 
-  const Social = model<ILocation>('Location', LocationSchema);
+  const Location = model<ILocation>('Location', LocationSchema);
 
-  export default Social;
+  export default Location;

@@ -3,7 +3,7 @@ import { IEducation } from '../interfaces/education';
 
 
 const EducationSchema = new Schema<IEducation>({
-  user_id: { type: String,  },
+  user_id: [{ type: Schema.Types.ObjectId, ref:'User' }],
   name_of_institution: { type: String, required: true },
   degree: { type: String, required: true },
 });

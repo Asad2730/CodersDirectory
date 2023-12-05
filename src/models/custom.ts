@@ -2,7 +2,7 @@ import { Schema, model } from "mongoose";
 import { ICustom } from "../interfaces/custom";
 
 const CustomSchema = new Schema<ICustom>({
-    user_id: { type: String, },
+    user_id: [{ type: Schema.Types.ObjectId, ref:'User' }],
     name: { type: String, required: true },
     icon: { type: String, required: true },
     type: { type: String, required: true },
